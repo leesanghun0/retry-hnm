@@ -6,7 +6,7 @@ const ProductDetail =()=>{
     const [detail, setDetail] = useState();
     let {id} = useParams();
     const getProductDetail = async ()=>{
-        let url = `https://my-json-server.typicode.com/leesanghun0/retry-hnm/products/${id}`;
+        let url = `my-json-server.typicode.com/leesanghun0/retry-hnm/products/${id}`;
         let response = await fetch(url);
         let data = await response.json();
         setDetail(data);
