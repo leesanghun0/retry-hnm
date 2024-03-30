@@ -106,3 +106,19 @@
         }
     }
 }
+
+
+@include mobile{
+    .product-detail{
+        flex-flow: column;
+
+        &-images{
+            width: 100%;
+            height: auto;
+        }
+
+        &-choice{
+            width: 100%;
+        }
+    }
+}

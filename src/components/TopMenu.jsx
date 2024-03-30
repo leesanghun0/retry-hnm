@@ -30,7 +30,7 @@ const TopMenu = ({closeSideMenu})=>{
         <div className="close-btn" onClick={closeSideMenu}>
             <i className="xi-close"></i>
         </div>
-        <ul className="">
+        <ul className="m-menu-list">
             {menu.map((item, key)=>(<li key={key}>{item}</li>))}   
         </ul>
     </div>

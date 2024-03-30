@@ -46,10 +46,21 @@
     width: 250px;
     height: 100vh;
     position: fixed;
-    background-color: gray;
+    opacity: 0.8;
+    background-color: black;
     top: 0;
     z-index: 1;
     margin-left: -250px;
+
+    &-list{
+        font-size: 25px;
+        color: white;
+        padding: 40px;
+
+        li{
+            padding: 5px 0;
+        }
+    }
 }
 
 .close-btn{
@@ -57,7 +68,9 @@
     height: 30px;
     font-size: 30px;
     margin: 10px;
-    border: 1px solid black;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
 
     i{
         vertical-align: top;

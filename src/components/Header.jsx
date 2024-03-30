@@ -33,6 +33,7 @@ const Header = ({auth, setAuth}) => {
         const menuElement = document.querySelector(".m-menu");
         if (menuElement) {
             menuElement.classList.add("show");
+            document.body.style.overflow = 'hidden';
         }
     }
     
@@ -40,6 +41,7 @@ const Header = ({auth, setAuth}) => {
         const menuElement = document.querySelector(".m-menu");
         if (menuElement) {
             menuElement.classList.remove("show");
+            document.body.style.overflow = "auto";
         }
     }
 
@@ -61,7 +63,7 @@ const Header = ({auth, setAuth}) => {
                 </Link>
             </div>
         </div>
-        <TopMenu/>
+        <TopMenu closeSideMenu={closeSideMenu}/>
         {sideMenu && <TopMenu closeSideMenu={closeSideMenu}/>}
       
         
