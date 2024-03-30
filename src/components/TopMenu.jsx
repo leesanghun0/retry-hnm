@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const TopMenu = ()=>{
+const TopMenu = ({closeSideMenu})=>{
     const menu = ["Women","Men","Baby","Kids","Sport","Sale","지속가능성"];
     let navigate = useNavigate();
 
@@ -26,8 +26,8 @@ const TopMenu = ()=>{
         </div>
     </div>
  {/* -------------------------모바일사이드메뉴 ------------------------------------------------ */}
-    <div className="m-menu show">
-        <div className="close-btn">
+    <div className="m-menu">
+        <div className="close-btn" onClick={closeSideMenu}>
             <i className="xi-close"></i>
         </div>
         <ul className="">
