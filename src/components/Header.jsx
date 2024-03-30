@@ -61,7 +61,8 @@ const Header = ({auth, setAuth}) => {
                 </Link>
             </div>
         </div>
-        {sideMenu &&  <TopMenu closeSideMenu={closeSideMenu}/>}
+        <TopMenu/>
+        {sideMenu && <TopMenu closeSideMenu={closeSideMenu}/>}
       
         
     </div>)
