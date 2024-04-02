@@ -1,15 +1,16 @@
 import React,{useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { productAction } from "../redux/actions/productAction";
 
 
 const ProductDetail =()=>{
+    const product = useSelector((state) => state.product.selectedItem);
     const [detail, setDetail] = useState();
     let {id} = useParams();
+    const dispatch = useDispatch();
     const getProductDetail = async ()=>{
-        let url = `https://my-json-server.typicode.com/leesanghun0/retry-hnm/products/${id}`;
-        let response = await fetch(url);
-        let data = await response.json();
-        setDetail(data);
+        dispatch(productAction.getProductDetail(id));
     }
 
     useEffect(()=>{
@@ -18,18 +19,18 @@ const ProductDetail =()=>{
 
     return (<div className="product-detail">
         <div className="product-detail-images">
-            <img src={detail?.img} alt={detail?.title} />
+            <img src={product?.img} alt={product?.title} />
         </div>
         <div className="product-detail-choice">
             <div className="product-detail-choice-title">
-                {detail?.title}
+                {product?.title}
                 <span className="product-detail-choice-title-new">
-                    {detail?.new?"신제품":null}
+                    {product?.new?"신제품":null}
                 </span>
             </div>
             <div className="product-detail-choice-price">\ {detail?.price}</div>
             <ul className="product-detail-choice-size">
-                {detail?.size.map((item,index)=>(
+                {product?.size.map((item,index)=>(
                     <li key={index}>{item}</li>
                 ))}
             </ul>

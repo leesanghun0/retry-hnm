@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductAll/>}/>
           <Route path="/login" element={<Login setAuth={setAuth}/>}/>
-          <Route path="/Product/:id" element={<PrivateRoute auth={auth}/>}/>
+          <Route path="/Product/:id" element={<PrivateRoute auth={auth}/>} />
         </Routes>
       <Footer />
     </div>
