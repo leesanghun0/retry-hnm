@@ -60,31 +60,23 @@ const productSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         })
-    },
-})
-
-const ProductDetailSlice = createSlice({
-    name:"ProductDetail",
-    initialState,
-    reducers:{},
-    extraReducers:(builder)=>{
-        builder.addCase(fetchProductDetail.pending,(state)=>{
+        .addCase(fetchProductDetail.pending,(state)=>{
             state.isLoading = true;
         })
         .addCase(fetchProductDetail.fulfilled,(state,action)=>{
             state.isLoading = false;
-            state.selectedItem = action.payload;
+            state.productList = action.payload;
         })
         .addCase(fetchProductDetail.rejected,(state,action)=>{
             state.isLoading = false;
             state.error = action.payload;
         })
-    }
+    },
 })
+
 
 
 console.log("pppp",productSlice)
 
 export const productActions= productSlice.actions
-export const ProductDetailAction = ProductDetailSlice.actions;
 export default productSlice.reducer
