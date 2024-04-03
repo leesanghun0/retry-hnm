@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import ProductCard from "../components/ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
-import { productAction } from "../redux/actions/productAction";
+//import { productAction } from "../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../redux/reducers/productSlice";
 
 
 const ProjectAll = ()=>{
@@ -13,7 +14,7 @@ const ProjectAll = ()=>{
     
     const getProducts = ()=>{
         let searchQuery = query.get("q") || "";
-        dispatch(productAction.getProducts(searchQuery));
+        dispatch(fetchProducts(searchQuery));
     }
 
     useEffect(()=>{

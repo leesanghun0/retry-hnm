@@ -1,16 +1,18 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { productAction } from "../redux/actions/productAction";
+//import { productAction } from "../redux/actions/productAction";
+import { fetchProductDetail } from "../redux/reducers/productSlice";
 
 
 const ProductDetail =()=>{
     const product = useSelector((state) => state.product.selectedItem);
-    const [detail, setDetail] = useState();
+    //const [detail, setDetail] = useState();
     let {id} = useParams();
     const dispatch = useDispatch();
-    const getProductDetail = async ()=>{
-        dispatch(productAction.getProductDetail(id));
+    const getProductDetail = () => {
+        //dispatch(productAction.getProductDetail(id));
+        dispatch(fetchProductDetail(id));
     }
 
     useEffect(()=>{
@@ -28,7 +30,7 @@ const ProductDetail =()=>{
                     {product?.new?"신제품":null}
                 </span>
             </div>
-            <div className="product-detail-choice-price">\ {detail?.price}</div>
+            <div className="product-detail-choice-price">\ {product?.price}</div>
             <ul className="product-detail-choice-size">
                 {product?.size.map((item,index)=>(
                     <li key={index}>{item}</li>
