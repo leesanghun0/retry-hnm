@@ -23,12 +23,12 @@ import { authenticateAction } from "../redux/actions/authenticateAction";
         <Form onSubmit={(event)=>loginUser(event)}>
            <Form.Group className="mb-3" controlId="formGroupEmail">
              <Form.Label>Email address</Form.Label>
-             <Form.Control type="email" placeholder="Enter email" onChange={(event)=>setId(event.target.value)}/>
+             <Form.Control type="email" placeholder="email형식으로 무작위 입력하세요" onChange={(event)=>setId(event.target.value)}/>
            </Form.Group>
 
            <Form.Group className="mb-3" controlId="formGroupPassword">
              <Form.Label>Password</Form.Label>
-             <Form.Control type="password" placeholder="Password" onChange={(event)=>setPassword(event.target.value)} />
+             <Form.Control type="password" placeholder="Password 무작위 입력하세요" onChange={(event)=>setPassword(event.target.value)} />
            </Form.Group>
            <Button variant="danger" type="submit">로그인</Button>
         </Form>
