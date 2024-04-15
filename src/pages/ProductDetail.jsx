@@ -6,7 +6,7 @@ import { fetchProductDetail } from "../redux/reducers/productSlice";
 
 
 const ProductDetail =()=>{
-    const product = useSelector((state) => state.product.ProductList);
+    const product = useSelector((state) => state.product.selectedItem);
     //const [detail, setDetail] = useState();
     let {id} = useParams();
     const dispatch = useDispatch();

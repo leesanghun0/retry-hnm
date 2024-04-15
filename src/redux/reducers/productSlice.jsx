@@ -65,7 +65,7 @@ const productSlice = createSlice({
         })
         .addCase(fetchProductDetail.fulfilled,(state,action)=>{
             state.isLoading = false;
-            state.productList = action.payload;
+            state.selectedItem = action.payload;
         })
         .addCase(fetchProductDetail.rejected,(state,action)=>{
             state.isLoading = false;
